@@ -23,7 +23,7 @@ This web application was built as part of the ITM 1131 Web Application Developme
 - Grace Eyotaru-(Female Anchor): Team coordination, user workflow design, and documentation lead.
 - Tema Innocent: Lead Developer, core JavaScript logic engine, and implementation.
 - Ivan Edwin Ocatre: Repository setup, feature integration, and testing.
-- James Lokure Festo: UI/UX layout structuring and CSS Flexbox/Grid responsive styling.
+- James Lokure Festo: UI layout structuring and CSS Flexbox/Grid responsive styling.
 - Vuni Mathew: Sample data curation, edge-case testing, and testing evidence.
 
 ## Acknowledgments
