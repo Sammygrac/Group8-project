@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Borrow Equipment - Muni University</title>
+</head>
+
+<body id="borrow-page">
+
+    <!-- Header Section -->
+    <header id="main-header" class="header-container">
+
+        <div id="university-logo" class="logo">
+            [ Muni University Logo ]
+        </div>
+
+        <div id="header-content" class="header-text">
+            <h1 id="system-title">
+                Muni University Equipment Borrowing and Return Tracker
+            </h1>
+
+            <p id="system-description">
+                Manage, borrow and return equipment with ease
+            </p>
+        </div>
+
+        <div id="asset-images" class="header-images">
+            [ Images of assets etc ]
+        </div>
+
+    </header>
+
+    <hr id="header-divider">
+
+    <!-- Navigation Section -->
+    <nav id="main-navigation" class="navigation">
+
+        <ul id="navigation-list">
+            <li><a id="home-link" href="index.html">Home</a></li>
+            <li><a id="borrow-link" href="borrow.html">Borrow Equipment</a></li>
+            <li><a id="return-link" href="return.html">Return Equipment</a></li>
+            <li><a id="records-link" href="records.html">View Records</a></li>
+            <li><a id="manage-link" href="manage.html">Manage Equipment</a></li>
+            <li><a id="users-link" href="users.html">Users</a></li>
+            <li><a id="logout-link" href="#logout">Logout</a></li>
+        </ul>
+
+    </nav>
+
+    <hr id="navigation-divider">
+
+    <!-- Main Content -->
+    <main id="main-content" class="borrow-dashboard">
+
+        <h2 id="page-heading">Borrow Equipment</h2>
+
+        <!-- Borrow Equipment Form -->
+        <section id="borrow-form-section" class="form-section">
+
+            <h3 id="form-heading">Borrow Equipment Form</h3>
+
+            <form id="borrow-equipment-form" class="borrow-form" action="#">
+
+                <p class="form-group">
+                    <label id="student-label" for="student-select">
+                        Student *
+                    </label><br>
+
+                    <select id="student-select" name="student">
+                        <option value="">Select Student</option>
+                    </select>
+                </p>
+
+                <p class="form-group">
+                    <label id="equipment-label" for="equipment-select">
+                        Equipment *
+                    </label><br>
+
+                    <select id="equipment-select" name="equipment">
+                        <option value="">Select Equipment</option>
+                    </select>
+                </p>
+
+                <p class="form-group">
+                    <label id="category-label" for="category-select">
+                        Category
+                    </label><br>
+
+                    <select id="category-select" name="category">
+                        <option value="">Select Category</option>
+                    </select>
+                </p>
+
+                <p class="form-group">
+                    <label id="borrow-date-label" for="borrow-date">
+                        Borrow Date
+                    </label><br>
+
+                    <input id="borrow-date" name="borrow-date" type="date">
+                </p>
+
+                <p class="form-group">
+                    <label id="return-date-label" for="expected-return-date">
+                        Expected Return Date
+                    </label><br>
+
+                    <input id="expected-return-date" name="return-date" type="date">
+                </p>
+
+                <p class="form-group">
+                    <button id="submit-request-button" class="submit-button" type="submit">
+                        Submit Request
+                    </button>
+                </p>
+
+            </form>
+
+        </section>
+
+        <hr id="content-divider">
+
+        <!-- Available Equipment Section -->
+        <section id="available-equipment-section" class="equipment-section">
+
+            <h3 id="available-equipment-heading">
+                Available Equipment
+            </h3>
+
+            <!-- Search Equipment -->
+            <p id="equipment-search-container">
+                <input
+                    id="equipment-search"
+                    class="search-input"
+                    type="search"
+                    placeholder="Search equipment..."
+                >
+            </p>
+
+            <!-- Equipment Table -->
+            <table id="equipment-table" class="equipment-table" border="1">
+
+                <thead id="equipment-table-header">
+                    <tr>
+                        <th>ID</th>
+                        <th>Equipment</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="equipment-table-body">
+
+                    <tr class="equipment-row">
+                        <td>EQ007</td>
+                        <td>Laptop</td>
+                        <td>Laptop</td>
+                        <td class="status-available">Available</td>
+                        <td>
+                            <button id="borrow-laptop-button" class="borrow-button" type="button">
+                                Borrow
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr class="equipment-row">
+                        <td></td>
+                        <td>Projector</td>
+                        <td>Projector</td>
+                        <td class="status-available">Available</td>
+                        <td>
+                            <button id="borrow-projector-button" class="borrow-button" type="button">
+                                Borrow
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr class="equipment-row">
+                        <td></td>
+                        <td>Audio</td>
+                        <td>Audio</td>
+                        <td class="status-available">Available</td>
+                        <td>
+                            <button id="borrow-audio-button" class="borrow-button" type="button">
+                                Borrow
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr class="equipment-row">
+                        <td></td>
+                        <td>Camera</td>
+                        <td>Camera</td>
+                        <td class="status-available">Available</td>
+                        <td>
+                            <button id="borrow-camera-button" class="borrow-button" type="button">
+                                Borrow
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr class="equipment-row">
+                        <td>EQ005</td>
+                        <td>Printer</td>
+                        <td>Printer</td>
+                        <td class="status-available">Available</td>
+                        <td>
+                            <button id="borrow-printer-button" class="borrow-button" type="button">
+                                Borrow
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
