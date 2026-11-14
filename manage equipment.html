@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Equipment-Muni University</title>
+</head>
+<div>[Muni University Logo]</div>
+<div>
+    <h1>Muni University Equipment Borrowing and Return Tracker</h1>
+    <p>Manage, borrow and return equipment with ease</p>
+</div>
+<div>[Images of assests etc]</div>
+</header>
+<hr>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a>/li>
+        <li><a href="borrow.html">Borrow Equipment</a>/li>
+        <li><a href="return.html">Return Equipment</a>/li>
+        <li><a href="records.html">View Records</a>/li>
+        <li><a href="manage.html">Manage Equipment</a>/li>
+        <li><a href="users.html">Users</a>/li>
+        <li><a href="#logout">Logout</a>/li>
+    </ul>
+</nav>
+<hr>
+<main>
+    <h2>Manage Equipment</h2>
+    <div>
+        <h3>Add / Update Equipment</h3>
+        <form action="#">
+            <p>
+                <label>Equipment Name *</label><br>
+                <input type="text" placeholder="enter equipment name">
+            </p>
+            <p>
+                <label>category *</label><br>
+                <select>
+                    <option>select category</option>
+                </select>
+            </p>
+            <p>
+                <label>status *</label><br>
+                <select>
+                    <option>select status</option>
+                </select>
+            </p>
+            <p>
+                <label>discription (optional)</label><br>
+                <textarea rows="4" cols="30" placeholder="add discription..."></textarea>
+            </p>
+            <p>
+                <button type="submit">save equipment</button>
+            </p>
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h3>Eqipment List</h3>
+        <p><input type="search" placeholder="search equipment...">/p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>category</th>
+                        <th>status</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Dell laptop</td>
+                        <td>laptop</td>
+                        <td>available</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>projector</td>
+                        <td>projector</td>
+                        <td>--</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>microphone</td>
+                        <td>Audio</td>
+                        <td>--</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>camera</td>
+                        <td>camera</td>
+                        <td>in repair</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>printer</td>
+                        <td>printer</td>
+                        <td>Available</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+    </div>
+</main>
+</body>
+</html>
