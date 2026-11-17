@@ -1,109 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Return Equipment-Muni University</title>
+    <meta name="description" content="Return borrowed equipment and update the status in the Muni University tracking system.">
+    <title>Return Equipment - Muni University</title>
 </head>
-<body>
-    <header>
-        <div>
-            Muni University Logo
+
+<body class="page page-return">
+    <header class="site-header" id="site-header">
+        <div class="site-header__logo">
+            <img src="Muni-logo.webp" alt="Muni University logo" width="100" height="100">
         </div>
-        <div>
-            <h1>Muni University Equipmment Borrowing and Return Tracker</h1>
+        <div class="site-header__content">
+            <h1>Muni University Equipment Borrowing and Return Tracker</h1>
+            <p>Manage, borrow and return equipment with ease</p>
         </div>
-        <div>
-        <p>Manage, borrow and Erturn Equipment with ease</p>
+        <div class="site-header__image">
+            <img src="combinedEquipment.jpg" alt="Equipment images" width="100" height="100">
         </div>
-        <div>Images of assets etc</div>
     </header>
+
     <hr>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-             <li><a href="borrow.html">Borrow Equipment</a></li>
-                <li><a href="return.html">Return Equipment</a></li>
-                   <li><a href="records.html">View Records</a></li>
-                      <li><a href="manage.html">Manage Equipment</a></li>
-                       <li><a href="users.html">Users</a></li>
-                          <li><a href="#logout">Logout</a></li>
-        </ul>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="borrow.html">Borrow Equipment</a>
+        <a href="return.html" aria-current="page">Return Equipment</a>
+        <a href="records.html">View Records</a>
+        <a href="manage.html">Manage Equipment</a>
+        <a href="users.html">Users</a>
+        <a href="#logout">Logout</a>
     </nav>
+
     <hr>
-    <main>
-        <h2>Return Equipment</h2>
-        <div>
-            <h3>Return Equipment Form</h3>
-            <form action="#">
-                <p>
-                    <label>Borrow Record</label><br>
-                    <select>
-                        <option>Select Borrow Record</option>
-                    </select>
-                </p>
-                <p>
-                    <label>Return Date</label><br>
-                    <input type="date">
-                </p>
-                <p>
-                    <label>Condition</label><br>
-                    <select>
-                        <option>Select Condition (Goog/Fair/Damaged)</option>
-                        <option>Good</option>
-                        <option>Fair</option>
-                        <option>Damaged</option>
-                    </select>
-                </p>
-                <p>
-                    <label>Notes (Optioal)</label><br>
-                    <textarea rows="4" cols="30"
-                    placeholder="add any notes..."></textarea>
-                </p>
-                <p>
-                    <button type="submit">Confirm Return</button>
-                </p>
-            </form>
-        </div>
-        <hr>
-        <div>
-            <h3>Active Borrowing</h3>
-            <p><input type="search" placeholder="Search..."></p>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Student</th>
-                        <th>Equipment</th>
-                        <th>Borrow Date</th>
-                        <th>Expected Return</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ivan Ocate</td>
-                        <td>Dell laptop</td>
-                        <td>07/11/2024</td>
-                        <td>14/11/2024</td>
-                        <td>On loan</td>
-                    </tr>
-                    <tr>
-                         <td>Mary Nakiya</td>
-                        <td>Projector</td>
-                        <td>06/11/2024</td>
-                        <td>13/11/2024</td>
-                        <td>On loan</td>
-                    </tr>
-                    <tr>
-                         <td>David Kato</td>
-                        <td>Microphone</td>
-                        <td>05/11/2024</td>
-                        <td>12/11/2024</td>
-                        <td>On loan</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+
+    <main class="page-content" id="main-content">
+        <section class="return-equipment" aria-labelledby="return-title">
+            <h2 id="return-title">Return Equipment</h2>
+
+            <div class="panel panel-form">
+                <h3>Return Equipment Form</h3>
+                <form action="#" class="form form-return">
+                    <p>
+                        <label for="borrow-record">Borrow Record</label><br>
+                        <select id="borrow-record">
+                            <option selected>Select Borrow Record</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="return-date">Return Date</label><br>
+                        <input id="return-date" type="date">
+                    </p>
+                    <p>
+                        <label for="condition">Condition</label><br>
+                        <select id="condition">
+                            <option selected>Select Condition (Good/Fair/Damaged)</option>
+                            <option>Good</option>
+                            <option>Fair</option>
+                            <option>Damaged</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="notes">Notes (Optional)</label><br>
+                        <textarea id="notes" rows="4" cols="30" placeholder="Add any notes..."></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">Confirm Return</button>
+                    </p>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="panel panel-list">
+                <h3>Active Borrowing</h3>
+                <input type="search" placeholder="Search..." aria-label="Search active borrowing">
+
+                <div class="table-wrapper">
+                    <table class="records-table" border="1">
+                        <thead>
+                            <tr>
+                                <th scope="col">Student</th>
+                                <th scope="col">Equipment</th>
+                                <th scope="col">Borrow Date</th>
+                                <th scope="col">Expected Return</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ivan Ocate</td>
+                                <td>Dell laptop</td>
+                                <td>07/11/2024</td>
+                                <td>14/11/2024</td>
+                                <td>On loan</td>
+                            </tr>
+                            <tr>
+                                <td>Mary Nakiya</td>
+                                <td>Projector</td>
+                                <td>06/11/2024</td>
+                                <td>13/11/2024</td>
+                                <td>On loan</td>
+                            </tr>
+                            <tr>
+                                <td>David Kato</td>
+                                <td>Microphone</td>
+                                <td>05/11/2024</td>
+                                <td>12/11/2024</td>
+                                <td>On loan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
+
 </html>
