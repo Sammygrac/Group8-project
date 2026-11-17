@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request to borrow available equipment from Muni University.">
+    <title>Borrow Equipment - Muni University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page page-borrow">
+    <header class="site-header" id="site-header">
+        <div class="site-header__logo">
+            <img src="Muni-logo.webp" alt="Muni University logo" width="100" height="100">
+        </div>
+        <div class="site-header__content">
+            <h1>Muni University Equipment Borrowing and Return Tracker</h1>
+            <p>Manage, borrow and return equipment with ease</p>
+        </div>
+        <div class="site-header__image">
+            <img src="combinedEquipment.jpg" alt="Equipment available for borrowing" width="100" height="100">
+        </div>
+    </header>
+
+    <hr>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="borrow.html" aria-current="page">Borrow Equipment</a>
+        <a href="return.html">Return Equipment</a>
+        <a href="records.html">View Records</a>
+        <a href="manage%20equipment.html">Manage Equipment</a>
+        <a href="users.html">Users</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <hr>
+
+    <main class="page-content" id="main-content">
+        <section class="borrow-equipment" aria-labelledby="borrow-title">
+            <h2 id="borrow-title">Borrow Equipment</h2>
+
+            <div class="panel panel-form">
+                <h3>Borrow Equipment Form</h3>
+                <form action="#" class="form form-borrow">
+                    <p>
+                        <label for="student-name">Student Name *</label><br>
+                        <input id="student-name" name="student-name" type="text" autocomplete="name" required placeholder="Enter student name">
+                    </p>
+                    <p>
+                        <label for="equipment">Equipment *</label><br>
+                        <select id="equipment" name="equipment" required>
+                            <option value="" selected disabled>Select equipment</option>
+                            <option value="dell-laptop">Dell Laptop</option>
+                            <option value="projector">Projector</option>
+                            <option value="microphone">Microphone</option>
+                            <option value="printer">Printer</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="borrow-date">Borrow Date *</label><br>
+                        <input id="borrow-date" name="borrow-date" type="date" required>
+                    </p>
+                    <p>
+                        <label for="expected-return">Expected Return Date *</label><br>
+                        <input id="expected-return" name="expected-return" type="date" required>
+                    </p>
+                    <p>
+                        <label for="borrow-notes">Notes (Optional)</label><br>
+                        <textarea id="borrow-notes" name="notes" rows="4" cols="30" placeholder="Add any notes..."></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">Submit Borrow Request</button>
+                    </p>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="panel panel-list">
+                <h3>Available Equipment</h3>
+                <label class="visually-hidden" for="equipment-search">Search available equipment</label>
+                <input id="equipment-search" type="search" placeholder="Search equipment..." aria-label="Search available equipment">
+                <div class="table-wrapper">
+                    <table class="records-table" id="available-equipment-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Equipment</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Dell Laptop</td>
+                                <td>Laptop</td>
+                                <td>Available</td>
+                                <td><button type="button" data-equipment="dell-laptop">Select</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Projector</td>
+                                <td>Projector</td>
+                                <td>Available</td>
+                                <td><button type="button" data-equipment="projector">Select</button></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Microphone</td>
+                                <td>Audio equipment</td>
+                                <td>Available</td>
+                                <td><button type="button" data-equipment="microphone">Select</button></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Printer</td>
+                                <td>Other</td>
+                                <td>Available</td>
+                                <td><button type="button" data-equipment="printer">Select</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const equipmentSelect = document.querySelector("#equipment");
+        const equipmentFromLink = new URLSearchParams(window.location.search).get("equipment");
+        if (equipmentSelect && equipmentFromLink) {
+            equipmentSelect.value = equipmentFromLink;
+        }
+
+        document.querySelectorAll("[data-equipment]").forEach((button) => {
+            button.addEventListener("click", () => {
+                if (equipmentSelect) {
+                    equipmentSelect.value = button.dataset.equipment;
+                    equipmentSelect.scrollIntoView({ behavior: "smooth", block: "center" });
+                    equipmentSelect.focus();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
