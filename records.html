@@ -4,113 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Records-Muni University</title>
+    <meta name="description" content="View equipment borrowing and return records for Muni University.">
+    <title>View Records - Muni University</title>
 </head>
 
-<body>
-    <header>ret
-        <div id="Logo">
-            <img src="Muni-logo.jpg" alt="Muni-University logo" width="100" height="100">
+<body class="page page-records">
+    <header class="site-header" id="site-header">
+        <div class="site-header__logo">
+            <img src="Muni-logo.webp" alt="Muni University logo" width="100" height="100">
         </div>
-        <div>
+        <div class="site-header__content">
             <h1>Muni University Equipment Borrowing and Return Tracker</h1>
-            <p>
-                Manage, borrow and return equipment with ease
-            </p>
+            <p>Manage, borrow and return equipment with ease</p>
         </div>
-        <div id="combinedEquipment.jpg">
-            <img src="combinedEquipment.jpg" alt="Image of items to be borrowd">
+        <div class="site-header__image">
+            <img src="combinedEquipment.jpg" alt="Equipment available for borrowing" width="100" height="100">
         </div>
     </header>
+
     <hr>
-    <nav>
+
+    <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="borrow.html">Borrow Equipment</a>
-        <a href="Return.html">Return Equipment</a>
-        <a href="records.html">View Records</a>
+        <a href="return.html">Return Equipment</a>
+        <a href="records.html" aria-current="page">View Records</a>
         <a href="manage.html">Manage Equipment</a>
         <a href="users.html">Users</a>
         <a href="#logout">Logout</a>
     </nav>
+
     <hr>
-    <main>
-        <h2>View Records</h2>
-        <div>
-            <p>
-                <strong>Borrow Records</strong>
-                <a href="#">Return Records</a>
-                <a href="#">Equipment History</a>
-            </p>
-        </div>
-        <div>
-            <input type="search" placeholder="search records">
-            <select>
-                <option>Last 30 days</option>
-                <option>All Time</option>
-            </select>
-        </div>
-        <br>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Student</th>
-                    <th>Equipment</th>
-                    <th>Borrow Date</th>
-                    <th>Expected Return</th>
-                    <th>Return Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Ivan Ocatre</td>
-                    <td>Dell Laptop</td>
-                    <td>07/11/2024</td>
-                    <td>14/11/2024</td>
-                    <td>14/11/2024</td>
-                    <td>Available</td>
-                    <td><button type="button">Borrow</td>
 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Mary Nakimya</td>
-                    <td>Projector</td>
-                    <td>06/11/2024</td>
-                    <td>13/11/2024</td>
-                    <td>13/11/2024</td>
-                    <td>Available</td>
-                    <td><button type="button">Borrow</button></td>
-                </tr>
+    <main class="page-content" id="main-content">
+        <section class="records" aria-labelledby="page-title">
+            <h2 id="page-title">View Records</h2>
 
-                <tr>
-                    <td>3</td>
-                    <td>David Kato</td>
-                    <td>Microphone</td>
-                    <td>06/11/2024</td>
-                    <td>13/11/2024</td>
-                    <td>13/11/2024</td>
-                    <td>Available</td>
-                    <td><button type="button">Borrow</button></td>
+            <nav class="records-tabs" aria-label="Record types">
+                <a class="records-tabs__link records-tabs__link--active" href="#borrow-records" aria-current="page">Borrow Records</a>
+                <a class="records-tabs__link" href="#return-records">Return Records</a>
+                <a class="records-tabs__link" href="#equipment-history">Equipment History</a>
+            </nav>
 
-                <tr>
-                    <td>4</td>
-                    <td>Rose Namaga</td>
-                    <td>Camera</td>
-                    <td>06/11/2024</td>
-                    <td>13/11/2024</td>
-                    <td>13/11/2024</td>
-                    <td>Available</td>
-                    <td><button type="button">Borrow</button></td>
-                </tr>
-                </tr>
+            <section class="records__controls" aria-label="Search and filter records">
+                <label class="visually-hidden" for="records-search">Search records</label>
+                <input class="records__search" id="records-search" name="search" type="search"
+                    placeholder="Search records" data-records-search>
 
+                <label class="visually-hidden" for="records-period">Filter by date</label>
+                <select class="records__period" id="records-period" name="period" data-records-period>
+                    <option value="30-days">Last 30 days</option>
+                    <option value="all-time">All Time</option>
+                </select>
+            </section>
 
-            </tbody>
-        </table>
+            <div class="table-wrapper" id="borrow-records">
+                <table class="records-table" id="borrow-records-table">
+                    <caption class="visually-hidden">Borrowing and return records</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Equipment</th>
+                            <th scope="col">Borrow Date</th>
+                            <th scope="col">Expected Return</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ivan Ocatre</td>
+                            <td>Dell Laptop</td>
+                            <td><time datetime="2024-11-07">07/11/2024</time></td>
+                            <td><time datetime="2024-11-14">14/11/2024</time></td>
+                            <td><time datetime="2024-11-14">14/11/2024</time></td>
+                            <td>Available</td>
+                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mary Nakimya</td>
+                            <td>Projector</td>
+                            <td><time datetime="2024-11-06">06/11/2024</time></td>
+                            <td><time datetime="2024-11-13">13/11/2024</time></td>
+                            <td><time datetime="2024-11-13">13/11/2024</time></td>
+                            <td>Available</td>
+                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>David Kato</td>
+                            <td>Microphone</td>
+                            <td><time datetime="2024-11-06">06/11/2024</time></td>
+                            <td><time datetime="2024-11-13">13/11/2024</time></td>
+                            <td><time datetime="2024-11-13">13/11/2024</time></td>
+                            <td>Available</td>
+                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Rose Namaga</td>
+                            <td>Camera</td>
+                            <td><time datetime="2024-11-06">06/11/2024</time></td>
+                            <td><time datetime="2024-11-13">13/11/2024</time></td>
+                            <td><time datetime="2024-11-13">13/11/2024</time></td>
+                            <td>Available</td>
+                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 </body>
 
