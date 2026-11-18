@@ -1,142 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muni University equipment borrowing and return tracker homepage.">
     <title>Home - Muni University Equipment Tracker</title>
+     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body id="home-page">
-
-    <header id="main-header" class="header-container">
-
-        <div id="university-logo" class="logo">
-            [ Muni University Logo ]
+<body class="page page-home">
+    <header class="site-header" id="site-header">
+        <div class="site-header__logo">
+            <img src="muni-logo.png" alt="Muni University logo" width="100" height="100">
         </div>
-
-        <div id="header-content" class="header-text">
-            <h1 id="system-title">
-                Muni University Equipment Borrowing and Return Tracker
-            </h1>
-
-            <p id="system-description">
-                Manage, borrow and return equipment with ease
-            </p>
+        <div class="site-header__content">
+            <h1>Muni University Equipment Borrowing and Return Tracker</h1>
+            <p>Manage, borrow and return equipment with ease</p>
         </div>
-
-        <div id="asset-images" class="header-images">
-            [ Images of assets etc ]
-        </div>
-
     </header>
 
-    <hr id="header-divider">
+    <hr>
 
-    <nav id="main-navigation" class="navigation">
-        <ul id="navigation-list">
-            <li><a id="home-link" href="index.html">Home</a></li>
-            <li><a id="borrow-link" href="borrow.html">Borrow Equipment</a></li>
-            <li><a id="return-link" href="return.html">Return Equipment</a></li>
-            <li><a id="records-link" href="records.html">View Records</a></li>
-            <li><a id="manage-link" href="manage.html">Manage Equipment</a></li>
-            <li><a id="users-link" href="users.html">Users</a></li>
-            <li><a id="logout-link" href="#logout">Logout</a></li>
-        </ul>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="borrow.html">Borrow Equipment</a>
+        <a href="return.html">Return Equipment</a>
+        <a href="records.html">View Records</a>
+        <a href="manage.html">Manage Equipment</a>
+        <a href="users.html">Users</a>
+        <a href="logout.html">Logout</a>
     </nav>
 
-    <hr id="navigation-divider">
+    <hr>
 
-    <main id="main-content" class="dashboard">
-
-        <h2 id="page-heading">Home</h2>
-
-        <section id="equipment-summary" class="summary-section">
-            <ul id="equipment-statistics" class="statistics-list">
-
-                <li id="total-equipment" class="stat-item">
-                    <strong>24</strong> Total Equipment
-                </li>
-
-                <li id="available-equipment" class="stat-item">
-                    <strong>12</strong> Available
-                </li>
-
-                <li id="borrowed-equipment" class="stat-item">
-                    <strong>8</strong> Borrowed
-                </li>
-
-                <li id="returned-today" class="stat-item">
-                    <strong>4</strong> Returned Today
-                </li>
-
-            </ul>
+    <main class="page-content" id="main-content">
+        <section class="home-intro" aria-labelledby="home-title">
+            <h2 id="home-title">Welcome to the Equipment Tracker</h2>
+            <p>Use this system to manage university equipment, record loans, and track returns.</p>
+            <div class="home-intro__actions">
+                <a class="button button-primary" href="borrow.html">Borrow Equipment</a>
+                <a class="button" href="return.html">Return Equipment</a>
+            </div>
         </section>
 
-        <hr id="dashboard-divider">
-
-        <section id="account-activity" class="activity-section">
-
-            <h3 id="activity-heading">Account Activity</h3>
-
-            <p id="view-all-activity">
-                <a href="records.html">View All</a>
-            </p>
-
-            <ul id="activity-list" class="activity-list">
-
-                <li class="activity-item">
-                    Equipment Returned - Projector by Sedra -
-                    <em>Today, 09:35 AM</em>
-                </li>
-
-                <li class="activity-item">
-                    Equipment Borrowed - Book by Ivan Ocate -
-                    <em>Yesterday, 09:19 PM</em>
-                </li>
-
-                <li class="activity-item">
-                    Equipment Borrowed - Microphone by David Kato -
-                    <em>Oct 31, 2024</em>
-                </li>
-
-            </ul>
-
+        <section class="dashboard" aria-labelledby="dashboard-title">
+            <h2 id="dashboard-title">Quick Overview</h2>
+            <div class="dashboard__cards">
+                <article class="dashboard-card">
+                    <h3>Borrow Equipment</h3>
+                    <p>Browse available equipment and submit a borrowing request.</p>
+                    <a href="borrow.html">Go to Borrow Equipment</a>
+                </article>
+                <article class="dashboard-card">
+                    <h3>Return Equipment</h3>
+                    <p>Record the return of equipment currently on loan.</p>
+                    <a href="return.html">Go to Returns</a>
+                </article>
+                <article class="dashboard-card">
+                    <h3>View Records</h3>
+                    <p>Review borrowing, return, and equipment history records.</p>
+                    <a href="records.html">View Records</a>
+                </article>
+                <article class="dashboard-card">
+                    <h3>Manage Equipment</h3>
+                    <p>Maintain equipment details and availability information.</p>
+                    <a href="manage.html">Manage Equipment</a>
+                </article>
+            </div>
         </section>
 
-        <section id="quick-actions" class="actions-section">
-
-            <h3 id="actions-heading">Quick Actions</h3>
-
-            <ul id="actions-list" class="actions-list">
-
-                <li>
-                    <a href="borrow.html">
-                        <button id="borrow-button" class="action-button" type="button">
-                            Borrow Equipment
-                        </button>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="return.html">
-                        <button id="return-button" class="action-button" type="button">
-                            Return Equipment
-                        </button>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="records.html">
-                        <button id="records-button" class="action-button" type="button">
-                            View Records
-                        </button>
-                    </a>
-                </li>
-
-            </ul>
-
+        <section class="home-equipment" aria-labelledby="equipment-title">
+            <h2 id="equipment-title">Equipment at a Glance</h2>
+            <div class="table-wrapper">
+                <table class="records-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Equipment</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dell Laptop</td>
+                            <td>Laptop</td>
+                            <td>Available</td>
+                            <td><a href="borrow.html">Borrow</a></td>
+                        </tr>
+                        <tr>
+                            <td>Projector</td>
+                            <td>Projector</td>
+                            <td>Available</td>
+                            <td><a href="borrow.html">Borrow</a></td>
+                        </tr>
+                        <tr>
+                            <td>Microphone</td>
+                            <td>Audio</td>
+                            <td>Available</td>
+                            <td><a href="borrow.html">Borrow</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
-
     </main>
-
+    <script src="script.js"></script>
 </body>
-</html
+
+</html>
