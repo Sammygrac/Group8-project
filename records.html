@@ -4,21 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="View borrowed equipment records for Muni University.">
+    <meta name="description" content="View equipment borrowing, return, and history records for Muni University.">
     <title>View Records - Muni University</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="page page-records">
-    <header class="site-header" id="site-header">
+    <header class="site-header">
         <div class="site-header__logo">
-            <img src="Muni-logo.webp" alt="Muni University logo" width="100" height="100">
+            <img src="muni-logo.png" alt="Muni University logo" width="100" height="100">
         </div>
+
         <div class="site-header__content">
             <h1>Muni University Equipment Borrowing and Return Tracker</h1>
             <p>Manage, borrow and return equipment with ease</p>
-        </div>
-        <div class="site-header__image">
-            <img src="combinedEquipment.jpg" alt="Equipment available for borrowing" width="100" height="100">
         </div>
     </header>
 
@@ -29,37 +28,50 @@
         <a href="borrow.html">Borrow Equipment</a>
         <a href="return.html">Return Equipment</a>
         <a href="records.html" aria-current="page">View Records</a>
-        <a href="manage equipment.html">Manage Equipment</a>
+        <a href="manage.html">Manage Equipment</a>
         <a href="users.html">Users</a>
         <a href="#logout">Logout</a>
     </nav>
 
     <hr>
 
-    <main class="page-content" id="main-content">
+    <main class="page-content">
         <section class="records" aria-labelledby="page-title">
             <h2 id="page-title">View Records</h2>
 
-            <nav class="records-tabs" aria-label="Record types">
-                <a class="records-tabs__link records-tabs__link--active" href="#borrow-records" aria-current="page">Borrow Records</a>
-                <a class="records-tabs__link" href="#return-records">Return Records</a>
-                <a class="records-tabs__link" href="#equipment-history">Equipment History</a>
-            </nav>
+            <div class="records-tabs" role="tablist" aria-label="Record types">
+                <a class="records-tabs__link" id="borrow-tab" href="#borrow-records" role="tab"
+                    aria-controls="borrow-records" aria-selected="false" tabindex="-1">
+                    Borrow Records
+                </a>
+
+                <a class="records-tabs__link records-tabs__link--active" id="return-tab" href="#return-records"
+                    role="tab" aria-controls="return-records" aria-selected="true">
+                    Return Records
+                </a>
+
+                <a class="records-tabs__link" id="history-tab" href="#equipment-history" role="tab"
+                    aria-controls="equipment-history" aria-selected="false" tabindex="-1">
+                    Equipment History
+                </a>
+            </div>
 
             <section class="records__controls" aria-label="Search and filter records">
                 <label class="visually-hidden" for="records-search">Search records</label>
-                <input class="records__search" id="records-search" name="search" type="search" placeholder="Search records" data-records-search>
+                <input class="records__search" id="records-search" type="search" placeholder="Search records">
 
-                <label class="visually-hidden" for="records-period">Filter by date</label>
-                <select class="records__period" id="records-period" name="period" data-records-period>
+                <label class="visually-hidden" for="records-period">Filter records by date</label>
+                <select class="records__period" id="records-period">
                     <option value="30-days">Last 30 days</option>
                     <option value="all-time">All Time</option>
                 </select>
             </section>
 
-            <div class="table-wrapper" id="borrow-records">
-                <table class="records-table" id="borrow-records-table">
-                    <caption class="visually-hidden">Borrowing and return records</caption>
+            <!-- Borrow Records tab -->
+            <section class="table-wrapper" id="borrow-records" role="tabpanel" aria-labelledby="borrow-tab" tabindex="0"
+                hidden>
+                <table class="records-table">
+                    <caption>Equipment borrowing records</caption>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -69,55 +81,241 @@
                             <th scope="col">Expected Return</th>
                             <th scope="col">Return Date</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr data-record-date="2026-11-07">
                             <td>1</td>
-                            <td>Ivan Ocatre</td>
+                            <td>Ivan Ocate</td>
                             <td>Dell Laptop</td>
-                            <td><time datetime="2024-11-07">07/11/2024</time></td>
-                            <td><time datetime="2024-11-14">14/11/2024</time></td>
-                            <td><time datetime="2024-11-14">14/11/2024</time></td>
-                            <td>Available</td>
-                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                            <td><time datetime="2026-11-07">07/11/2026</time></td>
+                            <td><time datetime="2026-11-21">21/11/2026</time></td>
+                            <td>Not returned</td>
+                            <td>On loan</td>
                         </tr>
-                        <tr>
+                        <tr data-record-date="2026-11-06">
                             <td>2</td>
-                            <td>Mary Nakimya</td>
+                            <td>Mary Nakiya</td>
                             <td>Projector</td>
-                            <td><time datetime="2024-11-06">06/11/2024</time></td>
-                            <td><time datetime="2024-11-13">13/11/2024</time></td>
-                            <td><time datetime="2024-11-13">13/11/2024</time></td>
-                            <td>Available</td>
-                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                            <td><time datetime="2026-11-06">06/11/2026</time></td>
+                            <td><time datetime="2026-11-20">20/11/2026</time></td>
+                            <td>Not returned</td>
+                            <td>On loan</td>
                         </tr>
-                        <tr>
+                        <tr data-record-date="2026-10-25">
                             <td>3</td>
                             <td>David Kato</td>
                             <td>Microphone</td>
-                            <td><time datetime="2024-11-06">06/11/2024</time></td>
-                            <td><time datetime="2024-11-13">13/11/2024</time></td>
-                            <td><time datetime="2024-11-13">13/11/2024</time></td>
-                            <td>Available</td>
-                            <td><button class="records-table__action" type="button">Borrow</button></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Rose Namaga</td>
-                            <td>Camera</td>
-                            <td><time datetime="2024-11-06">06/11/2024</time></td>
-                            <td><time datetime="2024-11-13">13/11/2024</time></td>
-                            <td><time datetime="2024-11-13">13/11/2024</time></td>
-                            <td>Available</td>
-                            <td><button class="records-table__action" type="button">Borrow</button></td>
+                            <td><time datetime="2026-10-25">25/10/2026</time></td>
+                            <td><time datetime="2026-11-08">08/11/2026</time></td>
+                            <td><time datetime="2026-11-12">12/11/2026</time></td>
+                            <td>Returned</td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </section>
+
+            <!-- Return Records tab -->
+            <section class="table-wrapper" id="return-records" role="tabpanel" aria-labelledby="return-tab"
+                tabindex="0">
+                <table class="records-table">
+                    <caption>Completed equipment return records</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Student</th>
+                            <th scope="col">Equipment</th>
+                            <th scope="col">Borrow Date</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col">Condition</th>
+                            <th scope="col">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-record-date="2026-11-12">
+                            <td>1</td>
+                            <td>David Kato</td>
+                            <td>Microphone</td>
+                            <td><time datetime="2026-10-25">25/10/2026</time></td>
+                            <td><time datetime="2026-11-12">12/11/2026</time></td>
+                            <td>Good</td>
+                            <td>Returned in good condition</td>
+                        </tr>
+                        <tr data-record-date="2026-11-10">
+                            <td>2</td>
+                            <td>Rose Namaga</td>
+                            <td>Camera</td>
+                            <td><time datetime="2026-10-22">22/10/2026</time></td>
+                            <td><time datetime="2026-11-10">10/11/2026</time></td>
+                            <td>Fair</td>
+                            <td>Minor wear noted</td>
+                        </tr>
+                        <tr data-record-date="2026-10-30">
+                            <td>3</td>
+                            <td>Sarah Akena</td>
+                            <td>Tripod</td>
+                            <td><time datetime="2026-10-20">20/10/2026</time></td>
+                            <td><time datetime="2026-10-30">30/10/2026</time></td>
+                            <td>Good</td>
+                            <td>No issues reported</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Equipment History tab -->
+            <section class="table-wrapper" id="equipment-history" role="tabpanel" aria-labelledby="history-tab"
+                tabindex="0" hidden>
+                <table class="records-table">
+                    <caption>Equipment borrowing, return, and condition history</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Equipment</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Borrowed By</th>
+                            <th scope="col">Borrow Date</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col">Condition</th>
+                            <th scope="col">Current Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-record-date="2026-11-07">
+                            <td>Dell Laptop</td>
+                            <td>Laptop</td>
+                            <td>Ivan Ocate</td>
+                            <td><time datetime="2026-11-07">07/11/2026</time></td>
+                            <td>Not returned</td>
+                            <td>—</td>
+                            <td>On loan</td>
+                        </tr>
+                        <tr data-record-date="2026-11-06">
+                            <td>Projector</td>
+                            <td>Audio-visual</td>
+                            <td>Mary Nakiya</td>
+                            <td><time datetime="2026-11-06">06/11/2026</time></td>
+                            <td>Not returned</td>
+                            <td>—</td>
+                            <td>On loan</td>
+                        </tr>
+                        <tr data-record-date="2026-11-12">
+                            <td>Microphone</td>
+                            <td>Audio</td>
+                            <td>David Kato</td>
+                            <td><time datetime="2026-10-25">25/10/2026</time></td>
+                            <td><time datetime="2026-11-12">12/11/2026</time></td>
+                            <td>Good</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr data-record-date="2026-11-10">
+                            <td>Camera</td>
+                            <td>Camera</td>
+                            <td>Rose Namaga</td>
+                            <td><time datetime="2026-10-22">22/10/2026</time></td>
+                            <td><time datetime="2026-11-10">10/11/2026</time></td>
+                            <td>Fair</td>
+                            <td>Available</td>
+                        </tr>
+                        <tr data-record-date="2026-10-30">
+                            <td>Tripod</td>
+                            <td>Photography</td>
+                            <td>Sarah Akena</td>
+                            <td><time datetime="2026-10-20">20/10/2026</time></td>
+                            <td><time datetime="2026-10-30">30/10/2026</time></td>
+                            <td>Good</td>
+                            <td>Available</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
     </main>
+
+    <script>
+        const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+        const panels = tabs.map((tab) =>
+            document.getElementById(tab.getAttribute('aria-controls'))
+        );
+        const searchInput = document.getElementById('records-search');
+        const periodSelect = document.getElementById('records-period');
+
+        function showTab(tab, moveFocus = false) {
+            tabs.forEach((currentTab, index) => {
+                const isSelected = currentTab === tab;
+
+                currentTab.setAttribute('aria-selected', String(isSelected));
+                currentTab.tabIndex = isSelected ? 0 : -1;
+                currentTab.classList.toggle(
+                    'records-tabs__link--active',
+                    isSelected
+                );
+                panels[index].hidden = !isSelected;
+            });
+
+            if (moveFocus) {
+                tab.focus();
+            }
+
+            filterRows();
+        }
+
+        function filterRows() {
+            const activePanel = panels.find((panel) => !panel.hidden);
+            if (!activePanel) return;
+
+            const query = searchInput.value.trim().toLowerCase();
+            const cutoff = new Date();
+            cutoff.setDate(cutoff.getDate() - 30);
+
+            activePanel.querySelectorAll('tbody tr').forEach((row) => {
+                const matchesSearch = row.textContent.toLowerCase().includes(query);
+                const rowDate = new Date(`${row.dataset.recordDate}T00:00:00`);
+                const matchesDate =
+                    periodSelect.value === 'all-time' ||
+                    (rowDate >= cutoff && rowDate <= new Date());
+
+                row.hidden = !(matchesSearch && matchesDate);
+            });
+        }
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', (event) => {
+                event.preventDefault();
+                showTab(tab);
+                history.replaceState(null, '', tab.hash);
+            });
+
+            tab.addEventListener('keydown', (event) => {
+                let nextIndex = index;
+
+                if (event.key === 'ArrowRight') {
+                    nextIndex = (index + 1) % tabs.length;
+                } else if (event.key === 'ArrowLeft') {
+                    nextIndex = (index - 1 + tabs.length) % tabs.length;
+                } else if (event.key === 'Home') {
+                    nextIndex = 0;
+                } else if (event.key === 'End') {
+                    nextIndex = tabs.length - 1;
+                } else {
+                    return;
+                }
+
+                event.preventDefault();
+                showTab(tabs[nextIndex], true);
+                history.replaceState(null, '', tabs[nextIndex].hash);
+            });
+        });
+
+        searchInput.addEventListener('input', filterRows);
+        periodSelect.addEventListener('change', filterRows);
+
+        const initialTab = tabs.find((tab) => tab.hash === window.location.hash);
+        if (initialTab) {
+            showTab(initialTab);
+        } else {
+            showTab(document.getElementById('return-tab'));
+        }
+    </script>
 </body>
 
 </html>
