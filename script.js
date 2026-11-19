@@ -506,3 +506,12 @@ async function loadAppData() {
 
     return sampleData;
 }
+const CONDITION_NONE = "Not recorded";
+
+const starterEquipment = [
+    { id: "dell-laptop", name: "Dell Laptop", category: "Laptop", condition: "Good", status: "Available" },
+    { id: "projector", name: "Projector", category: "Projector", condition: "Good", status: "Available" },
+    { id: "microphone", name: "Microphone", category: "Audio equipment", condition: "Good", status: "Available" },
+    { id: "printer", name: "Printer", category: "Other", condition: "Good", status: "Available" },
+    { id: "camera", name: "Camera", category: "Camera", condition: "In repair", status: "In repair" }
+];
