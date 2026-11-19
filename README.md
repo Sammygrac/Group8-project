@@ -30,5 +30,5 @@ This web application was built as part of the ITM 1131 Web Application Developme
 - Developed for ITM 1131 Web Application Development at Muni University.
 ## Deployment
 -We used Cloud flare to deploy our project on 
-( wandering-fog-121a.sammygrace473.workers.dev)
+( https://wandering-fog-121a.sammygrace473.workers.dev)
 
